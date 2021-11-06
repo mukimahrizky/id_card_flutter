@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: IdCard(),
   ));
 }
@@ -24,7 +24,17 @@ class IdCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/flower.jpg'),
+                radius: 40.0,
+              ),
+            ),
+            Divider(
+              height: 90.0,
+              color: Colors.grey[800],
+            ),
+            const Text(
               'NAME',
               style: TextStyle(
                 color: Colors.grey,
@@ -33,7 +43,7 @@ class IdCard extends StatelessWidget {
             ),
             SizedBox(height: 10.0),
             Text(
-              'Ikky',
+              'Mukimah Rizky Takkini (Ikky)',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2.0,
@@ -42,7 +52,7 @@ class IdCard extends StatelessWidget {
               )
             ),
             SizedBox(height: 30.0),
-            Text(
+            const Text(
               'POSITION',
               style: TextStyle(
                 color: Colors.grey,
@@ -68,7 +78,7 @@ class IdCard extends StatelessWidget {
                 ),
                 SizedBox(width: 10.0),
                 Text(
-                  'ikky@abc.com',
+                  '',
                   style: TextStyle(
                     color: Colors.grey[400],
                     fontSize: 18.0,
