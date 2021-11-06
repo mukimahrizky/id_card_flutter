@@ -6,8 +6,16 @@ void main() {
   ));
 }
 
-class IdCard extends StatelessWidget {
+class IdCard extends StatefulWidget {
   const IdCard({Key? key}) : super(key: key);
+
+  @override
+  State<IdCard> createState() => _IdCardState();
+}
+
+class _IdCardState extends State<IdCard> {
+
+  int like = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +26,15 @@ class IdCard extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            like += 1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[800],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -68,6 +85,24 @@ class IdCard extends StatelessWidget {
                 fontSize: 28.0,
                 fontWeight: FontWeight.bold,
               )
+            ),
+            SizedBox(height: 30.0),
+            const Text(
+                'LIKES',
+                style: TextStyle(
+                  color: Colors.grey,
+                  letterSpacing: 2.0,
+                )
+            ),
+            SizedBox(height: 10.0),
+            Text(
+                '$like',
+                style: TextStyle(
+                  color: Colors.amberAccent[200],
+                  letterSpacing: 2.0,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold,
+                )
             ),
             SizedBox(height: 30.0),
             Row(
